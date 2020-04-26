@@ -12,17 +12,33 @@ import Combine
 
 extension LoginView {
     class LoginViewModel: ObservableObject {
+        var cancellableSet = Set<AnyCancellable>()
+        
+        @Published var username: String = "candidate1@virta.global"
+        @Published var password: String = "1Candidate!"
+        
         @Published var loggingIn = false        
-        @Published var logInErrorMessage = "" {
-            didSet {
-                logInError = !logInErrorMessage.isEmpty
-            }
-        }
+        @Published var logInErrorMessage = ""
         @Published var logInError = false
         
-        var logInCancellable: AnyCancellable?
-                
-        func login(username: String, password: String) {
+        @Published var canLogin = false
+        
+        init() {
+            $logInErrorMessage
+                .map { err in !err.isEmpty }
+                .assign(to: \.logInError, on: self)
+                .store(in: &cancellableSet)
+            
+            Publishers.CombineLatest3($username, $password, $loggingIn)
+                .map { username, password, loggingIn -> Bool in
+                    !username.isEmpty && !password.isEmpty && !loggingIn
+            }
+            .assign(to: \.canLogin, on: self)
+            .store(in: &cancellableSet)
+        }
+        
+        var logInCancellable: AnyCancellable?        
+        func login() {
             loggingIn  = true
             logInCancellable = SessionService.shared
                 .signin(username: username, password: password)

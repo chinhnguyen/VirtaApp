@@ -10,15 +10,12 @@ import SwiftUI
 import Combine
 
 struct LoginView: View {
-    @State var username: String = "candidate1@virta.global"
-    @State var password: String = "1Candidate!"
-    
     @ObservedObject var viewModel = LoginViewModel()
     
     var body: some View {
-        
-        let canLogin = !self.username.isEmpty && !self.password.isEmpty && !self.viewModel.loggingIn
-        let loginButtonBgColor = canLogin ? Color("PrimaryButtonBackgroundColor") : Color("PrimaryButtonDisabledBackgroundColor")
+        let loginButtonBgColor = viewModel.canLogin
+            ? Color("PrimaryButtonBackgroundColor")
+            : Color("PrimaryButtonDisabledBackgroundColor")
         
         return VStack {
             Spacer()
@@ -33,19 +30,17 @@ struct LoginView: View {
                 .padding(.vertical, 16.0)
                 .scaledToFit()
             
-            IconTextField(icon: "icPerson", placeholder: "Username", text: $username)
+            IconTextField(icon: "icPerson", placeholder: "Username", text: $viewModel.username)
                 .padding(.horizontal, 32.0)
             Spacer()
                 .frame(height: 16.0)
             
-            IconSecureField(icon: "icLock", placeholder: "Password", text: $password)
+            IconSecureField(icon: "icLock", placeholder: "Password", text: $viewModel.password)
                 .padding(.horizontal, 32.0)
             Spacer()
                 .frame(height: 64.0)
             
-            Button(action: {
-                self.viewModel.login(username: self.username, password: self.password)
-            }) {
+            Button(action: viewModel.login) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 4)
                         .fill(loginButtonBgColor)
@@ -55,10 +50,10 @@ struct LoginView: View {
                 }
             }
             .frame(width: 120.0, height: 44.0)
-            .disabled(!canLogin)
+            .disabled(!viewModel.canLogin)
             
             Spacer()
-
+            
         }
         .alert(isPresented: $viewModel.logInError) {
             Alert(title: Text("Login failed"), message: Text(viewModel.logInErrorMessage), dismissButton: .default(Text("Close"), action: {
