@@ -1,0 +1,23 @@
+PODS:
+  - Alamofire (4.9.1)
+  - VirtaSdk (4.0.0):
+    - Alamofire (~> 4.9.0)
+
+DEPENDENCIES:
+  - VirtaSdk (from `./VirtaSdk`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+
+EXTERNAL SOURCES:
+  VirtaSdk:
+    :path: "./VirtaSdk"
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  VirtaSdk: c3a2071a189e77ec6bc2c451fa1faf48a9e127b1
+
+PODFILE CHECKSUM: 09901affc31510b84048b6b528321ebb315c25b7
+
+COCOAPODS: 1.5.2

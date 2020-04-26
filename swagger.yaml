@@ -1,0 +1,653 @@
+swagger: '2.0'
+info:
+  version: 4.0.0
+  title: Virta API v4 - Public
+  description: Virta API documentation Virta API documentation
+host: apitest.virta.fi
+basePath: /v4
+schemes:
+  - https
+consumes:
+  - application/json
+  - application/x-www-form-urlencoded
+produces:
+  - application/json
+securityDefinitions:
+  Authorization:
+    name: Authorization
+    type: apiKey
+    in: header
+paths:
+  /stations:
+    get:
+      operationId: GET_stations
+      summary: /stations
+      tags:
+        - PublicAPI
+        - Stations' information
+      description: |-
+        Function to retrieve basic information of all stations regardless of networks (Virta, Hubject, etc.).
+
+        If the auhorization header is defined, this function will also return private stations that are visible to that customer account.
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: lastUpdate
+          in: query
+          type: string
+        - name: latMin
+          in: query
+          type: number
+        - name: latMax
+          in: query
+          type: number
+        - name: longMin
+          in: query
+          type: number
+        - name: longMax
+          in: query
+          type: number
+        - name: from
+          in: query
+          type: integer
+        - name: limit
+          in: query
+          type: integer
+        - name: privilegedStations
+          in: query
+          description: 0/1 or omitted
+          type: integer
+        - name: includePoi
+          in: query
+          description: 0/1
+          type: integer
+      responses:
+        '200':
+          description: Successfully fetch stations' basic information
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/BasicStationInfo'
+          examples:
+            application/json:
+              - id: 127033
+                latitude: 48.278067
+                longitude: 16.456204
+                name: BIP P&R Leopoldau Station 2
+                city: Wien
+                provider: Hubject
+                evses:
+                  - id: 127033
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+                  - id: 126984
+                    connectors:
+                      - type: Type F
+                        maxKw: 16
+                    groupName: Default DEMS
+                  - id: 126932
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+                  - id: 127005
+                    connectors:
+                      - type: Type F
+                        maxKw: 16
+                    groupName: Default DEMS
+              - id: 121952
+                latitude: 48.757137
+                longitude: 9.313445
+                name: EnBW Ladestation 3175_1
+                city: Esslingen
+                provider: Hubject
+                evses:
+                  - id: 121952
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                      - type: Type F
+                        maxKw: 16
+                    groupName: Default DEMS
+                  - id: 121439
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                      - type: Type F
+                        maxKw: 16
+                    groupName: Default DEMS
+              - id: 118737
+                latitude: 49.731636
+                longitude: 10.147702
+                name: Innopark Lademeile
+                city: Kitzingen
+                provider: Hubject
+                evses:
+                  - id: 118737
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+                  - id: 118738
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+                  - id: 113072
+                    connectors:
+                      - type: Type F
+                        maxKw: 16
+                    groupName: Default DEMS
+                  - id: 113073
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+              - id: 118716
+                latitude: 49.023894
+                longitude: 12.714991
+                name: Haibach-Elisabethzell
+                city: Haibach
+                provider: Hubject
+                evses:
+                  - id: 118716
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+                  - id: 118720
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+              - id: 110222
+                latitude: 48.029295
+                longitude: 7.858328
+                name: Ladestation Smart innogy SE / 0842
+                city: Freiburg
+                provider: Hubject
+                evses:
+                  - id: 110222
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+                  - id: 110221
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+              - id: 113649
+                latitude: 48.20362
+                longitude: 16.33404
+                name: LugnerCity 3K 2 - 837 (Kombo)
+                city: Wien
+                provider: Hubject
+                evses:
+                  - id: 113649
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+              - id: 124518
+                latitude: 46.201388
+                longitude: 6.110898
+                name: AMAG Genf (Petit-Lancy)
+                city: Petit-Lancy
+                provider: Hubject
+                evses:
+                  - id: 124518
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+                  - id: 124517
+                    connectors:
+                      - type: CHAdeMO
+                        maxKw: 50
+                    groupName: Default DEMS
+                  - id: 124511
+                    connectors:
+                      - type: CCS
+                        maxKw: 50
+                    groupName: Default DEMS
+              - id: 109979
+                latitude: 50.781667
+                longitude: 6.508333
+                name: Ladestation smart innogy SE
+                city: Düren
+                provider: Hubject
+                evses:
+                  - id: 109979
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+                  - id: 109920
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+                  - id: 134222
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+                  - id: 134225
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+              - id: 124312
+                latitude: 47.442761
+                longitude: 9.413105
+                name: 'Zil-Garage, St.Gallen'
+                city: St. Gallen
+                provider: Hubject
+                evses:
+                  - id: 124312
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+                  - id: 124313
+                    connectors:
+                      - type: Mennekes
+                        maxKw: 22
+                    groupName: Default DEMS
+      security:
+        - Authorization: []
+  '/stations/{id}':
+    parameters:
+      - name: id
+        in: path
+        required: true
+        type: integer
+        format: int32
+    get:
+      operationId: GET_stations-id
+      summary: '/stations/{id}'
+      tags:
+        - PublicAPI
+        - Stations' information
+      description: |-
+        Function to retrieve all information the station with specific `stationId`.
+
+        If the authorization header is defined, this function will return station's pricing according to that customer account. Otherwise, it will return public pricing if available.
+      parameters:
+        - name: provider
+          in: query
+          description: 'The station id''s can overlap, so we can define the database table that we try to fetch the data. Values are Hubject/Poi/Virta or omitted which will try to fetch from Virta and then Hubject'
+          type: string
+      responses:
+        '200':
+          description: Successfully fetch station's information
+          schema:
+            $ref: '#/definitions/Station'
+          examples:
+            application/json:
+              id: 56521
+              name: Charging station
+              latitude: 60.167794
+              longtitude: 55.933187
+              icon: 0
+              address: Somewhere 888
+              city: Helsinki
+              openHours: Monday - Sunday 24/7
+              provider: Virta
+              pictures:
+                - magna cillum reprehenderit et
+                - consectetur reprehenderit ut dolore
+                - 'veniam '
+                - commodo
+              evses:
+                - id: 56521
+                  connectors:
+                    - connectorID: 71830809
+                    - maxKw: 2482173
+                      type: Type3
+                      currentType: AC
+                    - connectorID: 78075450
+                      type: Type2
+                  pricing:
+                    - name: price_per_kwh
+                      priceCents: 15
+                      currency: EUR
+                    - name: price_per_minute
+                      priceCents: 0.83
+                      currency: EUR
+                    - name: first_free_time_minutes
+                      minutes: 666
+        '404':
+          description: Station not found
+          schema:
+            type: object
+            properties:
+              status_code:
+                type: integer
+              message:
+                type: string
+          examples:
+            application/json:
+              status_code: 404
+              message: Station not found
+      security:
+        - Authorization: []
+  /auth:
+    post:
+      operationId: POST_auth
+      summary: /auth
+      tags:
+        - Authentication
+      description: |-
+        The Auth endpoint is used to authenticate the end-user with the system
+        to ensure in their identity. The Auth endpoint issues an unique expiring
+        JWT token to verify the identity for future API requests.
+
+        This call will update customer's last_token_generated timestamp.
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+                description: End-users email address
+              code:
+                type: string
+                description: End-users password code
+                format: password
+            required:
+              - email
+              - code
+            example:
+              email: customeremail@virta.fi
+              code: '9595'
+        - name: Content-Type
+          in: header
+          type: string
+        - name: brand
+          in: header
+          type: string
+        - name: Brand
+          in: header
+          type: string
+      responses:
+        '200':
+          description: The user has been successfully authenticated
+          schema:
+            type: object
+            properties:
+              token:
+                type: string
+          examples:
+            application/json:
+              token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXUyJ9.eyJzdWIiOjIzMjEwLCJpc3MiOiJodHRwczpcL1wvYXBpLnZpcnRhLmZpXC92NFwvYXV0aCIsImlhdCI6IjE1MjM4NzA1NzAiLCJleHAiOiIxNTI0NDc1MzcwIiwibmJmIjoiMTUyMzg3MDU3MCIsImp0aSI6IjI0ZThlNDA4ZjY4YjU0ZTRiYTMwM2EyOTRmYTMxMjJmIn0.MmVmN2FjMDljMTliNTJiYzhmMmIxZDY1MTVmNThkN2NjNzk3NmE2ZTk4ZmEyNmZiYTdhYjBjZjFmYmFlMTkxZQ
+        '401':
+          description: Invalid email or code | Password retry count has been exceeded
+          schema:
+            type: object
+            properties:
+              status_code:
+                type: integer
+              message:
+                type: string
+          examples:
+            application/json:
+              status_code: 401
+              message: Invalid email or code
+        '500':
+          description: ''
+          schema:
+            type: object
+            properties:
+              status_code:
+                type: integer
+              message:
+                type: string
+              error_code:
+                type: integer
+          examples:
+            application/json:
+              status_code: 500
+              message: Something went wrong
+              error_code: 0
+    delete:
+      operationId: DELETE_auth
+      tags:
+        - Authentication
+      description: Endpoint to invalidate/ revoke a token
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+              message:
+                type: string
+          examples:
+            application/json:
+              status: success
+              message: token revoked successfully
+        '400':
+          description: ''
+          schema:
+            type: object
+            properties:
+              status_code:
+                type: integer
+              message:
+                type: string
+              error_code:
+                type: integer
+          examples:
+            application/json:
+              status_code: 400
+              message: token is missing or invalid
+              error_code: 0
+      security:
+        - Authorization: []
+definitions:
+  BasicStationInfo:
+    title: Basic Station Info
+    type: object
+    properties:
+      id:
+        type: integer
+      latitude:
+        type: number
+      longitude:
+        type: number
+      name:
+        type: string
+      city:
+        type: string
+      address:
+        type: string
+      provider:
+        type: string
+      evses:
+        type: array
+        items:
+          $ref: '#/definitions/Connector'
+      icon:
+        type: integer
+      isRemoved:
+        type: boolean
+      isPrivate:
+        type: boolean
+  Station:
+    title: Station
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+        example: 1702
+      name:
+        type: string
+        example: Virta Office CP
+      latitude:
+        type: number
+        example: 46.74837
+      longtitude:
+        type: number
+        example: 46.333
+      icon:
+        type: integer
+        description: Icon ID for the specific station
+        example: 0
+      address:
+        type: string
+        example: 'Energiakuja 3, 00180'
+      city:
+        type: string
+        example: Helsinki
+      openHours:
+        type: string
+        example: 24/7
+      provider:
+        type: string
+        description: Name of the provider
+        example: Liikennevirta
+      pictures:
+        type: array
+        example:
+          - 'https://res.cloudinary.com/virta/image/upload/1068/1068_Runeberginkatu1_kuacsd.jpg'
+        items:
+          type: string
+      evses:
+        type: array
+        items:
+          $ref: '#/definitions/EVSE'
+      alertMessage:
+        type: string
+    example:
+      id: 1702
+      name: Virta Office CP
+      latitude: 46.74837
+      longtitude: 46.333
+      icon: 0
+      address: 'Energiakuja 3, 00180 Helsinki'
+      city: Helsinki
+      openHours: 24/7
+      providers: Liikennevirta
+      pictures:
+        - 'https://res.cloudinary.com/virta/image/upload/1068/1068_Runeberginkatu1_kuacsd.jpg'
+        - 'https://res.cloudinary.com/virta/image/upload/1068/1068_Runeberginkatu2_kuacsd.jpg'
+        - 'https://res.cloudinary.com/virta/image/upload/1068/1068_Runeberginkatu3_kuacsd.jpg'
+      evses:
+        - id: 1120
+          connectors:
+            - connectorID: 1
+              type: CHAdeMO
+              currentType: DC
+              maxKwh: 22
+            - connectorID: 2
+              type: CCS
+              currentType: DC
+              maxKwh: 22
+          available: true
+          reservable: true
+          pricing:
+            - name: Price_Per_Kwh
+              priceCents: 100
+              currency: EUR
+            - name: Price_Per_Minute
+              priceCents: 100
+              currency: EUR
+        - id: 1121
+          connectors:
+            - connectorID: 3
+              type: Type2
+              currentType: AC
+              maxKwh: 16
+          available: true
+          reservable: true
+          pricing:
+            - $ref: '#/definitions/Pricing/example'
+  Connector:
+    title: Connector
+    type: object
+    properties:
+      connectorID:
+        type: integer
+        description: Id of the specific connector
+        minimum: 1
+      type:
+        $ref: '#/definitions/ConnectorType'
+      currentType:
+        type: string
+        enum:
+          - AC
+          - DC
+      maxKw:
+        type: number
+        format: int32
+        description: Maximum power of specific connector
+    example:
+      connectorID: 1
+      type: CHAdeMO
+      currentType: AC
+      maxKw: 22
+  EVSE:
+    title: EVSE
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+      connectors:
+        type: array
+        items:
+          $ref: '#/definitions/Connector'
+      available:
+        type: boolean
+        description: Whether this EVSE is available for usage
+      reservable:
+        type: boolean
+        description: Whether this EVSE is available for reservation
+      pricing:
+        type: array
+        items:
+          $ref: '#/definitions/Pricing'
+      oneTimePayment:
+        type: boolean
+        description: 'Currently GET stations/{id} uses this field. Won''t be added in that endpoint for Hubject stations.'
+      status:
+        type: integer
+      minutesWithoutTimeCharge:
+        type: integer
+  Pricing:
+    title: Pricing
+    type: object
+    properties:
+      name:
+        type: string
+        description: Translation key for the price name
+      priceCents:
+        type: number
+        format: int32
+      currency:
+        type: string
+      minutes:
+        type: integer
+        description: 'a field to express pricing related time. For example, name - first free time, minutes - 666 to say that first 666 minutes a user will not be charged a time based fee.'
+    example:
+      name: Price_Per_Kwh
+      priceCents: 100
+      currency: EUR
+  ConnectorType:
+    title: ConnectorType
+    type: string
+    enum:
+      - CCS
+      - CHAdeMO
+      - Type2
+      - Type3
+      - Shuko

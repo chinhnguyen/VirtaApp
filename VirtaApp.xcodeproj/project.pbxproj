@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		174597D73FA5A5F0FB34EE26 /* Pods_VirtaAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8115929CC486779096EE52DE /* Pods_VirtaAppTests.framework */; };
+		27B0FE138C8B4721F68BC0DA /* Pods_VirtaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9952280F4F54EB18FFF388FC /* Pods_VirtaApp.framework */; };
+		544D35CF24561D2A00382D35 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D35CE24561D2A00382D35 /* SessionService.swift */; };
+		544D35D224561F9900382D35 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D35D124561F9900382D35 /* UserRepository.swift */; };
+		54B07614245589BC00C965BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B07613245589BC00C965BF /* AppDelegate.swift */; };
+		54B07616245589BC00C965BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B07615245589BC00C965BF /* SceneDelegate.swift */; };
+		54B0761A245589BD00C965BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B07619245589BD00C965BF /* Assets.xcassets */; };
+		54B0761D245589BD00C965BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B0761C245589BD00C965BF /* Preview Assets.xcassets */; };
+		54B07620245589BD00C965BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54B0761E245589BD00C965BF /* LaunchScreen.storyboard */; };
+		54B0762B245589BD00C965BF /* VirtaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B0762A245589BD00C965BF /* VirtaAppTests.swift */; };
+		54B076372455C33400C965BF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B076362455C33400C965BF /* LoginView.swift */; };
+		54B0763A2455CC7600C965BF /* IconTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B076392455CC7600C965BF /* IconTextField.swift */; };
+		54B0763C2455D38500C965BF /* IconSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B0763B2455D38500C965BF /* IconSecureField.swift */; };
+		54B076412456100100C965BF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B076402456100100C965BF /* LoginViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		54B07627245589BD00C965BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54B07608245589BC00C965BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54B0760F245589BC00C965BF;
+			remoteInfo = VirtaApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C1A6464D0EF0F157DE14F28 /* Pods-VirtaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtaApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-VirtaApp/Pods-VirtaApp.release.xcconfig"; sourceTree = "<group>"; };
+		141CD32B8BE0CFB19F179793 /* Pods-VirtaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtaAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VirtaAppTests/Pods-VirtaAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		35F635A4075937BCEBA4E9C3 /* Pods-VirtaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtaAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VirtaAppTests/Pods-VirtaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		544D35CE24561D2A00382D35 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
+		544D35D124561F9900382D35 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		54B07610245589BC00C965BF /* VirtaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54B07613245589BC00C965BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		54B07615245589BC00C965BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		54B07619245589BD00C965BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		54B0761C245589BD00C965BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		54B0761F245589BD00C965BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		54B07621245589BD00C965BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54B07626245589BD00C965BF /* VirtaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54B0762A245589BD00C965BF /* VirtaAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtaAppTests.swift; sourceTree = "<group>"; };
+		54B0762C245589BD00C965BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54B076362455C33400C965BF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		54B076392455CC7600C965BF /* IconTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextField.swift; sourceTree = "<group>"; };
+		54B0763B2455D38500C965BF /* IconSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSecureField.swift; sourceTree = "<group>"; };
+		54B076402456100100C965BF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8115929CC486779096EE52DE /* Pods_VirtaAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtaAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82E85D0E8265997E8AC24469 /* Pods-VirtaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VirtaApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VirtaApp/Pods-VirtaApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9952280F4F54EB18FFF388FC /* Pods_VirtaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VirtaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		54B0760D245589BC00C965BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27B0FE138C8B4721F68BC0DA /* Pods_VirtaApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54B07623245589BD00C965BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174597D73FA5A5F0FB34EE26 /* Pods_VirtaAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		149D42BFF7A0F6A4BE75C5B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82E85D0E8265997E8AC24469 /* Pods-VirtaApp.debug.xcconfig */,
+				0C1A6464D0EF0F157DE14F28 /* Pods-VirtaApp.release.xcconfig */,
+				35F635A4075937BCEBA4E9C3 /* Pods-VirtaAppTests.debug.xcconfig */,
+				141CD32B8BE0CFB19F179793 /* Pods-VirtaAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3B516A993A4EE8FE4F70B6C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9952280F4F54EB18FFF388FC /* Pods_VirtaApp.framework */,
+				8115929CC486779096EE52DE /* Pods_VirtaAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		544D35CD24561D0400382D35 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				544D35CE24561D2A00382D35 /* SessionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		544D35D024561F8300382D35 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				544D35D124561F9900382D35 /* UserRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		54B07607245589BC00C965BF = {
+			isa = PBXGroup;
+			children = (
+				54B07612245589BC00C965BF /* VirtaApp */,
+				54B07629245589BD00C965BF /* VirtaAppTests */,
+				54B07611245589BC00C965BF /* Products */,
+				149D42BFF7A0F6A4BE75C5B3 /* Pods */,
+				3B516A993A4EE8FE4F70B6C4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		54B07611245589BC00C965BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54B07610245589BC00C965BF /* VirtaApp.app */,
+				54B07626245589BD00C965BF /* VirtaAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		54B07612245589BC00C965BF /* VirtaApp */ = {
+			isa = PBXGroup;
+			children = (
+				544D35D024561F8300382D35 /* Repositories */,
+				544D35CD24561D0400382D35 /* Services */,
+				54B076352455C30900C965BF /* UI */,
+				54B07613245589BC00C965BF /* AppDelegate.swift */,
+				54B07615245589BC00C965BF /* SceneDelegate.swift */,
+				54B07619245589BD00C965BF /* Assets.xcassets */,
+				54B0761E245589BD00C965BF /* LaunchScreen.storyboard */,
+				54B07621245589BD00C965BF /* Info.plist */,
+				54B0761B245589BD00C965BF /* Preview Content */,
+			);
+			path = VirtaApp;
+			sourceTree = "<group>";
+		};
+		54B0761B245589BD00C965BF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				54B0761C245589BD00C965BF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		54B07629245589BD00C965BF /* VirtaAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				54B0762A245589BD00C965BF /* VirtaAppTests.swift */,
+				54B0762C245589BD00C965BF /* Info.plist */,
+			);
+			path = VirtaAppTests;
+			sourceTree = "<group>";
+		};
+		54B076352455C30900C965BF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				54B0763F24560FB100C965BF /* Login */,
+				54B076382455CBF900C965BF /* Core */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		54B076382455CBF900C965BF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				54B076392455CC7600C965BF /* IconTextField.swift */,
+				54B0763B2455D38500C965BF /* IconSecureField.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		54B0763F24560FB100C965BF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				54B076362455C33400C965BF /* LoginView.swift */,
+				54B076402456100100C965BF /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		54B0760F245589BC00C965BF /* VirtaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54B0762F245589BD00C965BF /* Build configuration list for PBXNativeTarget "VirtaApp" */;
+			buildPhases = (
+				1984BB75FF094A4D8564D438 /* [CP] Check Pods Manifest.lock */,
+				54B0760C245589BC00C965BF /* Sources */,
+				54B0760D245589BC00C965BF /* Frameworks */,
+				54B0760E245589BC00C965BF /* Resources */,
+				47557A5F192E6654D9870984 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VirtaApp;
+			productName = VirtaApp;
+			productReference = 54B07610245589BC00C965BF /* VirtaApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		54B07625245589BD00C965BF /* VirtaAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54B07632245589BD00C965BF /* Build configuration list for PBXNativeTarget "VirtaAppTests" */;
+			buildPhases = (
+				89D612A713CC3D8E4A2E4287 /* [CP] Check Pods Manifest.lock */,
+				54B07622245589BD00C965BF /* Sources */,
+				54B07623245589BD00C965BF /* Frameworks */,
+				54B07624245589BD00C965BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				54B07628245589BD00C965BF /* PBXTargetDependency */,
+			);
+			name = VirtaAppTests;
+			productName = VirtaAppTests;
+			productReference = 54B07626245589BD00C965BF /* VirtaAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		54B07608245589BC00C965BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = Virta;
+				TargetAttributes = {
+					54B0760F245589BC00C965BF = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					54B07625245589BD00C965BF = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 54B0760F245589BC00C965BF;
+					};
+				};
+			};
+			buildConfigurationList = 54B0760B245589BC00C965BF /* Build configuration list for PBXProject "VirtaApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 54B07607245589BC00C965BF;
+			productRefGroup = 54B07611245589BC00C965BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				54B0760F245589BC00C965BF /* VirtaApp */,
+				54B07625245589BD00C965BF /* VirtaAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		54B0760E245589BC00C965BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54B07620245589BD00C965BF /* LaunchScreen.storyboard in Resources */,
+				54B0761D245589BD00C965BF /* Preview Assets.xcassets in Resources */,
+				54B0761A245589BD00C965BF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54B07624245589BD00C965BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1984BB75FF094A4D8564D438 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VirtaApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47557A5F192E6654D9870984 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VirtaApp/Pods-VirtaApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/VirtaSdk/VirtaSdk.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VirtaSdk.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VirtaApp/Pods-VirtaApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89D612A713CC3D8E4A2E4287 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VirtaAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		54B0760C245589BC00C965BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54B07614245589BC00C965BF /* AppDelegate.swift in Sources */,
+				54B07616245589BC00C965BF /* SceneDelegate.swift in Sources */,
+				54B076412456100100C965BF /* LoginViewModel.swift in Sources */,
+				54B0763A2455CC7600C965BF /* IconTextField.swift in Sources */,
+				54B076372455C33400C965BF /* LoginView.swift in Sources */,
+				54B0763C2455D38500C965BF /* IconSecureField.swift in Sources */,
+				544D35D224561F9900382D35 /* UserRepository.swift in Sources */,
+				544D35CF24561D2A00382D35 /* SessionService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54B07622245589BD00C965BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54B0762B245589BD00C965BF /* VirtaAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		54B07628245589BD00C965BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54B0760F245589BC00C965BF /* VirtaApp */;
+			targetProxy = 54B07627245589BD00C965BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		54B0761E245589BD00C965BF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				54B0761F245589BD00C965BF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		54B0762D245589BD00C965BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		54B0762E245589BD00C965BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		54B07630245589BD00C965BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82E85D0E8265997E8AC24469 /* Pods-VirtaApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VirtaApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 6UB7D22RVN;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = VirtaApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fi.virta.VirtaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		54B07631245589BD00C965BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C1A6464D0EF0F157DE14F28 /* Pods-VirtaApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VirtaApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 6UB7D22RVN;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = VirtaApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fi.virta.VirtaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		54B07633245589BD00C965BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35F635A4075937BCEBA4E9C3 /* Pods-VirtaAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6UB7D22RVN;
+				INFOPLIST_FILE = VirtaAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fi.virta.VirtaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VirtaApp.app/VirtaApp";
+			};
+			name = Debug;
+		};
+		54B07634245589BD00C965BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 141CD32B8BE0CFB19F179793 /* Pods-VirtaAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6UB7D22RVN;
+				INFOPLIST_FILE = VirtaAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fi.virta.VirtaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VirtaApp.app/VirtaApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		54B0760B245589BC00C965BF /* Build configuration list for PBXProject "VirtaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54B0762D245589BD00C965BF /* Debug */,
+				54B0762E245589BD00C965BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54B0762F245589BD00C965BF /* Build configuration list for PBXNativeTarget "VirtaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54B07630245589BD00C965BF /* Debug */,
+				54B07631245589BD00C965BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54B07632245589BD00C965BF /* Build configuration list for PBXNativeTarget "VirtaAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54B07633245589BD00C965BF /* Debug */,
+				54B07634245589BD00C965BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 54B07608245589BC00C965BF /* Project object */;
+}
