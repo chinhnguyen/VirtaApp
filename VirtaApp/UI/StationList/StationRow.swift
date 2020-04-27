@@ -22,10 +22,10 @@ struct StationRow: View {
             .filter { v in !v.isEmpty}
             .joined(separator: ", ")
         
-        return VStack {
-            HStack {
+        return VStack(spacing: 0.0) {
+            HStack(alignment: .top) {
                 Text(station.name ?? "")
-                    .font(.headline)
+                    .font(.body)
                     .fontWeight(.bold)
                     .foregroundColor(Color("PrimaryTextColor"))
                 Spacer()
@@ -33,18 +33,17 @@ struct StationRow: View {
                     .font(.caption)
                     .fontWeight(.light)
                     .foregroundColor(Color("PrimaryTextColor"))
+                    .padding(.top, 4.0)
                 Image("icNavigate")
             }
-            HStack {
+            HStack(alignment: .top) {
                 Text(address)
                     .font(.caption)
                     .foregroundColor(Color("PrimaryTextColor"))
                     .multilineTextAlignment(.leading)
                 Spacer()
             }
-        }
-        .padding(.horizontal, 16.0)
-        
+        }        
     }
 }
 

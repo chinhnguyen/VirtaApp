@@ -13,14 +13,24 @@ struct StationList: View {
     
     init() {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "NavBarTitleColor") as Any]
+        
+        
     }
     
     var body: some View {
         NavigationView {
-            List(viewModel.stations, id: \.info.id) { station in
-                StationRow(stationInfoEx: station)
+            List {
+                ForEach(viewModel.stations, id: \.info.id) { station in
+                    ZStack {
+                        NavigationLink(destination: StationDetail(stationId: station.info.id ?? 0)) {
+                            EmptyView()
+                        }.hidden()
+                        StationRow(stationInfoEx: station)
+                    }
+                }
             }
             .navigationBarTitle("Nearby",displayMode: .inline)
+            .navigationBarHidden(false)
         }.onAppear { self.viewModel.reload()}
     }
     

@@ -16,9 +16,11 @@
 		544D35DA2456533E00382D35 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D35D92456533E00382D35 /* RootViewModel.swift */; };
 		544D35DC24565CE400382D35 /* StationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D35DB24565CE400382D35 /* StationRow.swift */; };
 		544D35DE24565D0E00382D35 /* StationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D35DD24565D0E00382D35 /* StationRepository.swift */; };
-		544D35E02456618E00382D35 /* NearbyStationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D35DF2456618E00382D35 /* NearbyStationService.swift */; };
+		544D35E02456618E00382D35 /* StationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D35DF2456618E00382D35 /* StationService.swift */; };
 		544D35E22456627700382D35 /* StationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D35E12456627700382D35 /* StationListViewModel.swift */; };
 		544D35E424566C2A00382D35 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D35E324566C2A00382D35 /* LocationService.swift */; };
+		544D35E7245688DD00382D35 /* StationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D35E6245688DD00382D35 /* StationDetail.swift */; };
+		544D35E924568D3A00382D35 /* StationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544D35E824568D3A00382D35 /* StationDetailViewModel.swift */; };
 		54B07614245589BC00C965BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B07613245589BC00C965BF /* AppDelegate.swift */; };
 		54B07616245589BC00C965BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B07615245589BC00C965BF /* SceneDelegate.swift */; };
 		54B0761A245589BD00C965BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54B07619245589BD00C965BF /* Assets.xcassets */; };
@@ -52,9 +54,11 @@
 		544D35D92456533E00382D35 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		544D35DB24565CE400382D35 /* StationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationRow.swift; sourceTree = "<group>"; };
 		544D35DD24565D0E00382D35 /* StationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationRepository.swift; sourceTree = "<group>"; };
-		544D35DF2456618E00382D35 /* NearbyStationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStationService.swift; sourceTree = "<group>"; };
+		544D35DF2456618E00382D35 /* StationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationService.swift; sourceTree = "<group>"; };
 		544D35E12456627700382D35 /* StationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewModel.swift; sourceTree = "<group>"; };
 		544D35E324566C2A00382D35 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		544D35E6245688DD00382D35 /* StationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetail.swift; sourceTree = "<group>"; };
+		544D35E824568D3A00382D35 /* StationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailViewModel.swift; sourceTree = "<group>"; };
 		54B07610245589BC00C965BF /* VirtaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54B07613245589BC00C965BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54B07615245589BC00C965BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,7 +123,7 @@
 			children = (
 				544D35CE24561D2A00382D35 /* SessionService.swift */,
 				544D35E324566C2A00382D35 /* LocationService.swift */,
-				544D35DF2456618E00382D35 /* NearbyStationService.swift */,
+				544D35DF2456618E00382D35 /* StationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -150,6 +154,15 @@
 				544D35D92456533E00382D35 /* RootViewModel.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		544D35E5245688C500382D35 /* StationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				544D35E6245688DD00382D35 /* StationDetail.swift */,
+				544D35E824568D3A00382D35 /* StationDetailViewModel.swift */,
+			);
+			path = StationDetail;
 			sourceTree = "<group>";
 		};
 		54B07607245589BC00C965BF = {
@@ -210,6 +223,7 @@
 			children = (
 				544D35D62456531100382D35 /* Root */,
 				544D35D32456470000382D35 /* StationList */,
+				544D35E5245688C500382D35 /* StationDetail */,
 				54B0763F24560FB100C965BF /* Login */,
 				54B076382455CBF900C965BF /* Core */,
 			);
@@ -398,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54B07614245589BC00C965BF /* AppDelegate.swift in Sources */,
+				544D35E7245688DD00382D35 /* StationDetail.swift in Sources */,
 				54B07616245589BC00C965BF /* SceneDelegate.swift in Sources */,
 				54B076412456100100C965BF /* LoginViewModel.swift in Sources */,
 				544D35D52456471F00382D35 /* StationList.swift in Sources */,
@@ -408,11 +423,12 @@
 				54B0763C2455D38500C965BF /* IconSecureField.swift in Sources */,
 				544D35DA2456533E00382D35 /* RootViewModel.swift in Sources */,
 				544D35E424566C2A00382D35 /* LocationService.swift in Sources */,
+				544D35E924568D3A00382D35 /* StationDetailViewModel.swift in Sources */,
 				544D35DC24565CE400382D35 /* StationRow.swift in Sources */,
 				544D35D224561F9900382D35 /* UserRepository.swift in Sources */,
 				544D35DE24565D0E00382D35 /* StationRepository.swift in Sources */,
 				544D35CF24561D2A00382D35 /* SessionService.swift in Sources */,
-				544D35E02456618E00382D35 /* NearbyStationService.swift in Sources */,
+				544D35E02456618E00382D35 /* StationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

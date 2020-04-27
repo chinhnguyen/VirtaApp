@@ -1,5 +1,5 @@
 //
-//  StationListViewModel.swift
+//  StationDetailViewModel.swift
 //  VirtaApp
 //
 //  Created by Chinh Nguyen on 4/27/20.
@@ -10,20 +10,19 @@ import Foundation
 import Combine
 import VirtaSdk
 
-extension StationList {
-    class StationListViewModel: ObservableObject {
-        var cancellableSet = Set<AnyCancellable>()
+extension StationDetail {
+    class StationDetailViewModel: ObservableObject {
         var reloadCancellable: AnyCancellable?
         
-        @Published var stations: [StationInfoEx] = []
+        @Published var station: StationEx?
         @Published var loading = false
         @Published var loadingError: String?
         
-        func reload() {
+        func reload(stationId: Int) {
             loading  = true
             loadingError = ""
             reloadCancellable = StationService.shared
-                .listNearbyStations()
+                .loadStation(id: stationId)
                 .sink(receiveCompletion: { evt in
                     self.loading  = false
                     switch evt {
@@ -32,8 +31,8 @@ extension StationList {
                     case .failure(let error):
                         self.loadingError = error.localizedDescription
                     }
-                }, receiveValue: { stations in
-                    self.stations = stations
+                }, receiveValue: { station in
+                    self.station = station
                 })
             
         }

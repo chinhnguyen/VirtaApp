@@ -1,5 +1,5 @@
 //
-//  NearbyStationService.swift
+//  StationService.swift
 //  VirtaApp
 //
 //  Created by Chinh Nguyen on 4/27/20.
@@ -17,9 +17,18 @@ struct StationInfoEx {
     public var distanceInMeters: Double = 0
 }
 
-class NearbyStationService {
+struct StationEx {
+    public var station: Station
+    public var distanceInMeters: Double = 0
+}
+
+enum LocationError: Error {
+    case couldNotGetCurrentLocation
+}
+
+class StationService {
     
-    static let shared = NearbyStationService()
+    static let shared = StationService()
     
     var locationService: LocationService?
     
@@ -28,8 +37,8 @@ class NearbyStationService {
             .getCurrentLocation()
             .flatMap { location -> AnyPublisher<[StationInfoEx], Error>  in
                 guard let location = location else {
-                    return Future<[StationInfoEx], Error> { promise in
-                        promise(.success([]))
+                    return Future { promise in
+                        promise(.failure(LocationError.couldNotGetCurrentLocation))
                     }.eraseToAnyPublisher()
                 }
                 let lat = location.coordinate.latitude
@@ -51,8 +60,27 @@ class NearbyStationService {
                         }.sorted { (s1, s2) in
                             s1.distanceInMeters < s2.distanceInMeters
                         }
+                }.eraseToAnyPublisher()
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    func loadStation(id: Int) -> AnyPublisher<StationEx, Error> {
+        return LocationService
+            .getCurrentLocation()
+            .flatMap { location -> AnyPublisher<StationEx, Error>  in
+                guard let location = location else {
+                    return Future { promise in
+                        promise(.failure(LocationError.couldNotGetCurrentLocation))
                     }.eraseToAnyPublisher()
-            }
-            .eraseToAnyPublisher()
+                }
+                return StationRepository.loadById(id).map { station in
+                    let stationLocation = CLLocation(latitude: station.latitude ?? 0, longitude: station.longtitude ?? 0)
+                    let distanceInMeters = location.distance(from: stationLocation)
+                    
+                    return StationEx(station: station, distanceInMeters: distanceInMeters)
+                }.eraseToAnyPublisher()
+        }
+        .eraseToAnyPublisher()
     }
 }

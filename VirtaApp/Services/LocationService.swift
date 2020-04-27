@@ -55,6 +55,7 @@ public class LocationService: NSObject, CLLocationManagerDelegate {
             }
             instance = LocationService()
             instance!.run { location in
+                instance = nil
                 guard let location = location else {
                     promise(.success(nil))
                     return
