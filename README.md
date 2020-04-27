@@ -15,6 +15,12 @@ Sample Virta App with test Api.
 
 # Folder structure
 
-Normal folder structure for any CocoaPods project.
+Normal folder structure for any CocoaPods project except
 
-The generated code to call backend is put in folder `VirtaSdk`.
+1. The generated code to call backend is put in folder `VirtaSdk`.
+1. `swagger.yml` contains the SDK definition.
+1. `Makefile` which contain single entry for regenration `VirtaSdk` in case `swagger.yml` got changed. 
+
+# Generate SDK
+
+`make generate-sdk`
