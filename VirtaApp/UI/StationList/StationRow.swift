@@ -29,7 +29,7 @@ struct StationRow: View {
                     .fontWeight(.bold)
                     .foregroundColor(Color("PrimaryTextColor"))
                 Spacer()
-                Text(stationInfoEx.distance)
+                Text("\(Int(stationInfoEx.distanceInMeters))m")
                     .font(.caption)
                     .fontWeight(.light)
                     .foregroundColor(Color("PrimaryTextColor"))
@@ -52,7 +52,7 @@ struct StationRow_Previews: PreviewProvider {
     static var previews: some View {
         let evses = [Connector(connectorID: 1, type:.ccs, currentType: .ac, maxKw: 22.0), Connector(connectorID: 2, type:.ccs, currentType: .ac, maxKw: 22.0)]
         let stationInfo = BasicStationInfo(id: 1, latitude: 48.278067, longitude:  16.456204, name: "Sahakotalo Kamppi", city: "Helsinki", address: "Runeberginkatu 1", provider: "Hubject", evses: evses, icon: nil, isRemoved: nil, isPrivate: nil)
-        let stationInfoEx = StationInfoEx(info: stationInfo, distance: "100m")
+        let stationInfoEx = StationInfoEx(info: stationInfo, distanceInMeters: 100.0)
         
         return StationRow(stationInfoEx: stationInfoEx)
             .previewLayout(.fixed(width: 320, height: 106))

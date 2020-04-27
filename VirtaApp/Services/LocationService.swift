@@ -46,7 +46,7 @@ public class LocationService: NSObject, CLLocationManagerDelegate {
     
     static var instance: LocationService?
     
-    class func getCurrentLocation() -> Future<(Double, Double)?, Error> {
+    class func getCurrentLocation() -> Future<CLLocation?, Error> {
         
         return Future { promise in
             if instance != nil {
@@ -59,7 +59,7 @@ public class LocationService: NSObject, CLLocationManagerDelegate {
                     promise(.success(nil))
                     return
                 }
-                promise(.success((location.coordinate.latitude, location.coordinate.longitude)))
+                promise(.success(location))
             }
         }
     }

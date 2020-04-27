@@ -14,7 +14,7 @@ import CoreLocation
 
 struct StationInfoEx {
     public var info: BasicStationInfo
-    public var distance: String = ""
+    public var distanceInMeters: Double = 0
 }
 
 class NearbyStationService {
@@ -23,33 +23,35 @@ class NearbyStationService {
     
     var locationService: LocationService?
     
-    func calculateDistance(fromLat: Double, fromLong: Double, toLat: Double, toLong: Double) -> String {
-        return "50m"
-    }
-
     func listNearbyStations(from: Int = 0, limit: Int = 10) -> AnyPublisher<[StationInfoEx], Error> {
         return LocationService
             .getCurrentLocation()
             .flatMap { location -> AnyPublisher<[StationInfoEx], Error>  in
-                guard let (lat, long) = location else {
+                guard let location = location else {
                     return Future<[StationInfoEx], Error> { promise in
                         promise(.success([]))
                     }.eraseToAnyPublisher()
                 }
+                let lat = location.coordinate.latitude
+                let long = location.coordinate.longitude
                 let stations = StationRepository.listByLocation(
-                    latMin: lat - 0.02,
-                    latMax: lat + 0.02,
-                    longMin: long - 0.02,
-                    longMax: long + 0.02,
+                    latMin: lat - 0.015,
+                    latMax: lat + 0.015,
+                    longMin: long - 0.015,
+                    longMax: long + 0.015,
                     from: from,
                     limit: limit
                 )
-                return stations.map { infos in
-                    infos.map { info in
-                        let distance = self.calculateDistance(fromLat: lat, fromLong: long, toLat: info.latitude ?? 0, toLong: info.longitude ?? 0)
-                        return StationInfoEx(info: info, distance: distance)
-                    }
-                }.eraseToAnyPublisher()
+                return stations
+                    .map { infos in
+                        infos.map { info in
+                            let stationLocation = CLLocation(latitude: info.latitude ?? 0, longitude: info.longitude ?? 0)
+                            let distanceInMeters = location.distance(from: stationLocation)
+                            return StationInfoEx(info: info, distanceInMeters: distanceInMeters)
+                        }.sorted { (s1, s2) in
+                            s1.distanceInMeters < s2.distanceInMeters
+                        }
+                    }.eraseToAnyPublisher()
             }
             .eraseToAnyPublisher()
     }
