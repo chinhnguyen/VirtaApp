@@ -42,5 +42,6 @@ struct StationRow: View {
 struct StationRow_Previews: PreviewProvider {
     static var previews: some View {
         StationRow(station: BasicStationInfo(id: 1, latitude: 48.278067, longitude:  16.456204, name: "Sahakotalo Kamppi", city: "Helsinki", address: "Runeberginkatu 1", provider: "Hubject", evses: [Connector(connectorID: 1, type:.ccs, currentType: .ac, maxKw: 22.0), Connector(connectorID: 2, type:.ccs, currentType: .ac, maxKw: 22.0)], icon: nil, isRemoved: nil, isPrivate: nil))
+            .previewLayout(.fixed(width: 320, height: 106))
     }
 }

@@ -9,16 +9,22 @@
 import SwiftUI
 
 struct StationList: View {
+    @ObservedObject var viewModel = StationListViewModel()
+    
     init() {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "NavBarTitleColor") as Any]
     }
     
     var body: some View {
         NavigationView {
-            Text("hello")
-                .navigationBarTitle("Nearby",displayMode: .inline)
-        }
+            List(viewModel.stations, id: \.id) { station in
+                StationRow(station: station)
+            }
+            .navigationBarTitle("Nearby",displayMode: .inline)
+        }.onAppear { self.viewModel.reload()}
     }
+    
+    
 }
 
 struct StationList_Previews: PreviewProvider {
