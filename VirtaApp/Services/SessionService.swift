@@ -13,12 +13,21 @@ class SessionService {
     
     static let shared = SessionService()
     
+    private let defaults = UserDefaults.standard
+    
     @Published var token = ""
+    
+    init() {
+        token = defaults.string(forKey: "token") ?? ""
+    }
     
     func signin(username: String, password: String) -> AnyPublisher<Void, UserAuthError> {
         return UserRepository
             .signin(username: username, password: password)
-            .map { token -> () in self.token = token }
+            .map { token -> () in
+                self.token = token
+                self.defaults.setValue(token, forKey: "token")
+            }
             .eraseToAnyPublisher()
     }
 }

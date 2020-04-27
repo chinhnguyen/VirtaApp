@@ -9,8 +9,15 @@
 import SwiftUI
 
 struct StationList: View {
+    init() {
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "NavBarTitleColor") as Any]
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Text("hello")
+                .navigationBarTitle("Nearby",displayMode: .inline)
+        }
     }
 }
 

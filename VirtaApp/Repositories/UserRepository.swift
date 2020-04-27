@@ -10,7 +10,6 @@ import Foundation
 import VirtaSdk
 import Combine
 
-
 enum UserAuthError: Error {
     case invalidUserNamePassword(_ error: Error?)
 }

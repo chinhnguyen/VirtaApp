@@ -37,7 +37,7 @@ extension LoginView {
             .store(in: &cancellableSet)
         }
         
-        var logInCancellable: AnyCancellable?        
+        var logInCancellable: AnyCancellable?
         func login() {
             loggingIn  = true
             logInCancellable = SessionService.shared
