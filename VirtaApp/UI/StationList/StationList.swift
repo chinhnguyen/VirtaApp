@@ -17,8 +17,8 @@ struct StationList: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.stations, id: \.id) { station in
-                StationRow(station: station)
+            List(viewModel.stations, id: \.info.id) { station in
+                StationRow(stationInfoEx: station)
             }
             .navigationBarTitle("Nearby",displayMode: .inline)
         }.onAppear { self.viewModel.reload()}

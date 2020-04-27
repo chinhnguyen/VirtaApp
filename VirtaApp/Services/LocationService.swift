@@ -24,8 +24,7 @@ public class LocationService: NSObject, CLLocationManagerDelegate {
         locationServicesEnabled = CLLocationManager.locationServicesEnabled()
         if locationServicesEnabled {
             manager.startUpdatingLocation()
-        }
-        else {
+        } else {
             locationCallback(nil)
         }
     }
@@ -43,5 +42,25 @@ public class LocationService: NSObject, CLLocationManagerDelegate {
     
     deinit {
         manager.stopUpdatingLocation()
+    }
+    
+    static var instance: LocationService?
+    
+    class func getCurrentLocation() -> Future<(Double, Double)?, Error> {
+        
+        return Future { promise in
+            if instance != nil {
+                promise(.success(nil))
+                return
+            }
+            instance = LocationService()
+            instance!.run { location in
+                guard let location = location else {
+                    promise(.success(nil))
+                    return
+                }
+                promise(.success((location.coordinate.latitude, location.coordinate.longitude)))
+            }
+        }
     }
 }

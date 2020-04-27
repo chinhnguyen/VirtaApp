@@ -15,7 +15,7 @@ extension StationList {
         var cancellableSet = Set<AnyCancellable>()
         var reloadCancellable: AnyCancellable?
         
-        @Published var stations: [BasicStationInfo] = []
+        @Published var stations: [StationInfoEx] = []
         @Published var loading = false
         @Published var loadingError: String?
         
